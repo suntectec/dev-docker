@@ -1,8 +1,7 @@
 local:
 
 /opt/apache-seatunnel-2.3.10/bin/seatunnel.sh -m local \
--c /home/jagger.luo/projects/paimon-flink/docker/practice/kafka-seatunnel/config/json_format/kafka2paimon.stream.conf
-
+-c /home/Data.Eng/jagger/docker/kafka/seatunnel/paimon/config/json_format/kafka2console.stream.conf
 
 
 CREATE CATALOG paimon_catalog WITH (
