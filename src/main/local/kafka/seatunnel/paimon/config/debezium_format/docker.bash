@@ -2,7 +2,7 @@ local:
 
 /opt/apache-seatunnel-2.3.10/bin/seatunnel.sh \
 -m local \
--c /home/Data.Eng/jagger/src/main/local/kafka/seatunnel/paimon/config/json_format/kafka2paimon.stream.conf
+-c /home/Data.Eng/jagger/src/main/local/kafka/seatunnel/paimon/config/debezium_format/kafka2paimon.stream.conf
 
 
 CREATE CATALOG paimon_catalog WITH (
@@ -18,8 +18,8 @@ USE CATALOG paimon_catalog;
 
 USE paimon;
 
-select count(*) from order_json_format;
-select * from order_json_format;
+select count(*) from order_debezium_format;
+select * from order_debezium_format;
 
 # org.apache.flink.table.api.TableException: Column 'id' is NOT NULL, however, a null value is being written into it. You can set job configuration 'table.exec.sink.not-null-enforcer'='DROP' to suppress this exception and drop such records silently.
 set 'table.exec.sink.not-null-enforcer'='DROP';
