@@ -2,12 +2,12 @@ local:
 
 /opt/apache-seatunnel-2.3.10/bin/seatunnel.sh \
 -m local \
--c /home/Data.Eng/jagger/src/main/local/kafka/seatunnel/paimon/config/debezium_format/kafka2paimon.stream.conf
+-c /home/Data.Eng/jagger/local/seatunnel/config/kafka2paimon.stream.conf
 
 
 CREATE CATALOG paimon_catalog WITH (
   'type'='paimon',
-  'warehouse'='s3://sqlserver/kafka/seatunnel/',
+  'warehouse'='s3a://warehouse/paimon/seatunnel/',
   's3.endpoint'='http://minio:9000',
   's3.access-key'='minioadmin',
   's3.secret-key'='minioadmin',

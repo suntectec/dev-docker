@@ -1,5 +1,9 @@
 docker exec -it seatunnel-test bash
 
+# flink engine
+bin/start-seatunnel-flink-15-connector-v2.sh -c /config/sqlserver2paimon.stream.conf
+
+# zeta engine
 bin/seatunnel.sh -m local -c /config/sqlserver2paimon.stream.conf
 
 
