@@ -77,11 +77,7 @@ SELECT count(*) FROM orders;
 
 SELECT * FROM orders order by created_at desc;
 
-
 SELECT id,order_id,supplier_id,qty FROM orders where id in (1,40);
-
-
-
 
 -- switch to streaming mode
 SET 'execution.runtime-mode' = 'streaming';
@@ -129,4 +125,3 @@ SET 'execution.checkpointing.interval' = '5 s';
 -- read
 SELECT * FROM sqlserver_source;
 SELECT * FROM orders;
-
